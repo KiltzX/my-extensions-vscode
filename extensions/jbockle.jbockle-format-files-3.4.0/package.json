@@ -1,0 +1,148 @@
+{
+	"name": "jbockle-format-files",
+	"displayName": "Format Files",
+	"description": "",
+	"version": "3.4.0",
+	"publisher": "jbockle",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jbockle/format-files.git"
+	},
+	"engines": {
+		"vscode": "^1.54.0"
+	},
+	"galleryBanner": {
+		"color": "#009CFF",
+		"theme": "light"
+	},
+	"categories": [
+		"Formatters"
+	],
+	"activationEvents": [
+		"onCommand:formatFiles.start.workspace",
+		"onCommand:formatFiles.start.workspaceFolder",
+		"onCommand:formatFiles.start.fromGlob"
+	],
+	"main": "./out/extension",
+	"extensionDependencies": [
+		"vscode.git"
+	],
+	"contributes": {
+		"configuration": [
+			{
+				"properties": {
+					"formatFiles.logLevel": {
+						"scope": "resource",
+						"type": "string",
+						"default": "debug",
+						"enum": [
+							"debug",
+							"info",
+							"warn",
+							"error"
+						]
+					},
+					"formatFiles.extensionsToInclude": {
+						"scope": "resource",
+						"type": "string",
+						"description": "Glob pattern of file extensions to include"
+					},
+					"formatFiles.excludedFolders": {
+						"scope": "resource",
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"description": "Comma seperated glob pattern of files to exclude",
+						"default": [
+							"node_modules",
+							".vscode",
+							".git",
+							"dist",
+							".chrome"
+						]
+					},
+					"formatFiles.excludePattern": {
+						"scope": "resource",
+						"type": "string",
+						"description": "Comma seperated glob pattern of files to exclude"
+					},
+					"formatFiles.inheritWorkspaceExcludedFiles": {
+						"scope": "resource",
+						"type": "boolean",
+						"description": "Determines if Format Files will inherit workspace excluded files",
+						"default": true
+					},
+					"formatFiles.runOrganizeImports": {
+						"scope": "resource",
+						"type": "boolean",
+						"description": "Whether or not to run 'Organize Imports' when formatting files",
+						"default": false
+					},
+					"formatFiles.useGitIgnore": {
+						"scope": "resource",
+						"type": "boolean",
+						"description": "If the workspace folder is a git repository, skips files that git ignores",
+						"default": true
+					}
+				}
+			}
+		],
+		"commands": [
+			{
+				"command": "formatFiles.start.workspace",
+				"title": "Start Format Files: Workspace"
+			},
+			{
+				"command": "formatFiles.start.workspaceFolder",
+				"title": "Start Format Files: This Folder",
+				"enablement": "explorerViewletVisible && filesExplorerFocus && explorerResourceIsFolder"
+			},
+			{
+				"command": "formatFiles.start.fromGlob",
+				"title": "Start Format Files: From Glob"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"when": "explorerResourceIsFolder",
+					"command": "formatFiles.start.workspaceFolder",
+					"group": "navigation@-1"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "npm run lint && npm run clean && tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"lint": "eslint src/**/*.ts",
+		"clean": "rimraf out/*"
+	},
+	"devDependencies": {
+		"@types/jest": "^26.0.24",
+		"@types/micromatch": "^4.0.2",
+		"@types/node": "^14.*",
+		"@types/vscode": "^1.54",
+		"@typescript-eslint/eslint-plugin": "^4.28.4",
+		"@typescript-eslint/parser": "^4.28.4",
+		"eslint": "^7.31.0",
+		"jest": "^27.0.6",
+		"rimraf": "^3.0.2",
+		"ts-jest": "^27.0.4",
+		"ts-node": "^10.1.0",
+		"typescript": "^4.3.5"
+	},
+	"dependencies": {
+		"fdir": "^5.1.0",
+		"micromatch": "^4.0.4"
+	},
+	"__metadata": {
+		"id": "3fe6f5f6-ba66-4d7e-87da-ae72742dfc17",
+		"publisherId": "f2a12126-f70f-4708-88d7-dab3a2ebbeef",
+		"publisherDisplayName": "jbockle",
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1642808452169
+	}
+}

@@ -1,0 +1,59 @@
+{
+	"name": "loopback-easy",
+	"displayName": "Loopback Code Easy",
+	"description": "A loopback extension",
+	"version": "0.7.0",
+	"engines": {
+		"vscode": "^1.33.0"
+	},
+	"categories": [
+		"Other",
+		"Snippets"
+	],
+	"activationEvents": [
+		"onCommand:extension.createRemoteMethod",
+		"onCommand:extension.createRemoteHook"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.createRemoteMethod",
+				"title": "Create Remote Method"
+			},
+			{
+				"command": "extension.createRemoteHook",
+				"title": "Create Remote Hook"
+			}
+		],
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"eslint": "^5.13.0",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	},
+	"author": {
+		"name": "Adil Rahman P A",
+		"email": "adilpa91@gmail.com"
+	},
+	"publisher": "Adil",
+	"__metadata": {
+		"id": "31976c3c-ba28-4c18-9a9e-13390173288f",
+		"publisherId": "57fe6eed-978d-4902-a0c0-473730cf8673",
+		"publisherDisplayName": "Adil",
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1642808458685
+	}
+}

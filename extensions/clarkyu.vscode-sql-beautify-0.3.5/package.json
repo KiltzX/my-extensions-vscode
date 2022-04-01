@@ -1,0 +1,104 @@
+{
+	"name": "vscode-sql-beautify",
+	"displayName": "SQL Beautify",
+	"description": "More Powerful extension that beautifies SQL/一键美化你的SQL",
+	"version": "0.3.5",
+	"publisher": "clarkyu",
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"keywords": [
+		"hive",
+		"sql",
+		"formatters",
+		"格式化",
+		"美化",
+		"beautify"
+	],
+	"categories": [
+		"Formatters"
+	],
+	"activationEvents": [
+		"onLanguage:sql",
+		"onLanguage:hive-sql",
+		"onCommand:extension.beautifySql"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/clarkyu2016/sql-beautify.git"
+	},
+	"main": "./extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.beautifySql",
+				"title": "Beautify SQL"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "extension.beautifySql",
+				"key": "alt+shift+f",
+				"when": "editorTextFocus && !editorReadonly && editorLangId =~ /sql/ "
+			},
+			{
+				"command": "extension.beautifySqlddl",
+				"key": "alt+shift+l",
+				"when": "editorTextFocus && !editorReadonly && editorLangId =~ /sql/ "
+			},
+			{
+				"command": "extension.extractDdl",
+				"key": "alt+shift+;",
+				"when": "editorTextFocus && !editorReadonly && editorLangId =~ /sql/ "
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Beautify SQL",
+			"properties": {
+				"extension.uppercase": {
+					"scope": "resource",
+					"type": "boolean",
+					"default": true,
+					"description": "Convert keywords to uppercase/将关键词转变为大写"
+				},
+				"extension.comma_location": {
+					"scope": "resource",
+					"type": "boolean",
+					"default": false,
+					"description": "Fix the comma location to the end of the line/把逗号放在字段后面(不建议开启)"
+				},
+				"extension.bracket_char": {
+					"scope": "resource",
+					"type": "boolean",
+					"default": false,
+					"description": "Use whitespace to replace Tab in the indentation of subquery  /在子查询缩进场景中，把制表符替换成四个空格"
+				},
+				"extension.as_loc_cnt": {
+					"scope": "resource",
+					"type": "number",
+					"default": 150,
+					"description": "Set max length of the column to align words after `as`  /自定义当你的字段长度超过多少字符，不参加as对齐(整个字段长度包括as后面的列名)"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"icon": "images/icon.png",
+	"dependencies": {
+		"vkbeautify": "0.99.1"
+	},
+	"devDependencies": {
+		"vscode": "^0.11.0"
+	},
+	"__metadata": {
+		"id": "3422b2ca-7151-4627-b7ce-adf888562d04",
+		"publisherId": "b095b96a-0807-4555-a2ff-b774781d6e68",
+		"publisherDisplayName": "clarkyu",
+		"isPreReleaseVersion": false,
+		"preRelease": false,
+		"installedTimestamp": 1645639315557
+	}
+}

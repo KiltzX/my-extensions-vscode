@@ -1,0 +1,87 @@
+{
+	"name": "remove-empty-lines",
+	"displayName": "Remove empty lines",
+	"description": "Remove blank lines from document or selection.",
+	"version": "0.0.8",
+	"publisher": "usernamehw",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.56.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/usernamehw/vscode-remove-empty-lines"
+	},
+	"bugs": {
+		"url": "https://github.com/usernamehw/vscode-remove-empty-lines/issues"
+	},
+	"extensionKind": [
+		"ui",
+		"workspace"
+	],
+	"keywords": [
+		"remove",
+		"delete",
+		"empty",
+		"blank",
+		"line"
+	],
+	"categories": [
+		"Other",
+		"Formatters"
+	],
+	"activationEvents": [
+		"onCommand:remove-empty-lines.inDocument",
+		"onCommand:remove-empty-lines.inSelection"
+	],
+	"main": "./dist/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "remove-empty-lines.inDocument",
+				"title": "in Document",
+				"category": "Remove empty lines"
+			},
+			{
+				"command": "remove-empty-lines.inSelection",
+				"title": "in Selection",
+				"category": "Remove empty lines"
+			}
+		],
+		"configuration": {
+			"title": "Remove empty lines",
+			"properties": {
+				"remove-empty-lines.allowedNumberOfEmptyLines": {
+					"type": "integer",
+					"default": 0,
+					"maximum": 500,
+					"description": "Number of allowed consecutive empty lines."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "webpack --mode production --color",
+		"watch": "webpack --mode development --watch --stats minimal"
+	},
+	"devDependencies": {
+		"@types/node": "^14.17.5",
+		"@types/vscode": "^1.56.0",
+		"@typescript-eslint/eslint-plugin": "^4.28.4",
+		"@typescript-eslint/parser": "^4.28.4",
+		"eslint": "^7.31.0",
+		"eslint-plugin-no-autofix": "^1.1.2",
+		"friendly-errors-webpack-plugin": "^1.7.0",
+		"ts-loader": "^9.2.3",
+		"typescript": "^4.3.5",
+		"webpack": "^5.45.1",
+		"webpack-cli": "^4.7.2"
+	},
+	"__metadata": {
+		"id": "10a12f01-b6a2-4dc4-89c0-e42c01f02e0e",
+		"publisherId": "151820df-5dc5-4c97-8751-eb84643203fa",
+		"publisherDisplayName": "Alexander",
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1642808460847
+	}
+}

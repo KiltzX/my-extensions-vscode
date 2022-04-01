@@ -1,0 +1,1 @@
+cp -r extensions/* ~/.vscode/extensions/ 

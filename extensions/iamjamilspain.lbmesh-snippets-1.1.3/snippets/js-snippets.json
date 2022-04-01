@@ -1,0 +1,160 @@
+{
+    "LBMesh-Messenger Endpoint": {
+        "prefix": "lbmesh:messenger-endpoint",
+        "body": [
+            "\t/**",
+            "\t *  @method  #methodname",
+            "\t *  @description  Description text",
+            "\t */",
+            "\t #Model#.#name# = function(formdata, cb){",
+            "\t\t ",
+            "\t\t cb(null, {} );",
+            "\t\t ",  
+            "\t }",                
+            " ",
+            "\t #Model#.remoteMethod('#name#', {",
+            "\t\t accepts: {arg: 'formdata', type: 'object', http: { source: 'body'}},",
+            "\t\t returns: {arg: 'status', type: 'object', root: true },",
+            "\t\t http: {path: '#path#', verb: 'POST'},",
+            "\t });",
+            ""
+    ],
+    "LBMesh-Admin Express AUTH Route": {
+    "prefix": "lbmesh:admin-router-page-auth",
+    "body": [
+        "",
+        "\t\t /**",
+        "\t\t\t  *  @method MIDDLEWARE userAuthRequired",
+        "\t\t **/",
+        " ",
+        ""
+    ],
+    "description": "Making Auth Route Path for Routes.js"
+    },
+    "LBMesh-Admin Render View": {
+        "prefix":"lbmesh-admin-render-view",
+        "body": [
+            "",
+            "\t\t\t res.render('#view#', {",
+            "\t\t\t\t link: '#nav#',",
+            "\t\t\t\t currentUser: req.session.adminuser,",
+            "\t\t\t });",
+            ""
+        ],
+        "description": "Admin Route Render View Snippet"
+    },
+    "LBMesh-General Async Parallel Function": {
+        "prefix": "lbmesh:general-async-parallel",
+        "body": [
+            "\t\t async.parallel([",
+            "\t\t\t\t function(callback) {",
+            "\t\t\t\t\t\t  ",
+            "\t\t\t\t\t\t  callback(null, {});",
+            "\t\t\t\t\t\t  ",
+            "\t\t\t\t },",
+            "\t\t\t\t function(callback) {",
+            "\t\t\t\t\t\t  ",
+            "\t\t\t\t\t\t  callback(null, {});",
+            "\t\t\t\t\t\t  ",
+            "\t\t\t\t },",
+            "\t\t ],",
+            "\t\t function(err, results) {",
+            "\t\t\t\t",
+            "\t\t\t\t",
+            "\t\t });",
+            ""
+        ],
+        "description": "Async Parallel Function for Routes"
+        },
+        "LBMesh-General Async Series Function": {
+            "prefix": "lbmesh:general-async-series",
+            "body": [
+                "\t\t async.series([",
+                "\t\t\t\t function(callback) {",
+                "\t\t\t\t\t\t  ",
+                "\t\t\t\t\t\t  callback(null, {});",
+                "\t\t\t\t\t\t  ",
+                "\t\t\t\t },",
+                "\t\t\t\t function(callback) {",
+                "\t\t\t\t\t\t  ",
+                "\t\t\t\t\t\t  callback(null, {});",
+                "\t\t\t\t\t\t  ",
+                "\t\t\t\t },",
+                "\t\t ],",
+                "\t\t function(err, results) {",
+                "\t\t\t\t",
+                "\t\t\t\t",
+                "\t\t });",
+                ""
+            ],
+            "description": "Async Series Function for Routes"
+            },
+    "LBMesh-Admin Express POST Route":{
+        "prefix": "lbmesh:admin-router-page-path:post",
+        "body": [
+            "\t/**",
+            "\t *  @method POST /dashboard/#path#",
+            "\t */",
+            "\t\tapp.post('/dashboard/#action#', function(req,res,next) {",
+            "",
+            "\t\t\tif (!req.session.token) {",
+            "\t\t\t\t  res.redirect('/login.html?error=ACCESS_DENIED'); ",
+            "\t\t\t} else {",
+            "\t\t\t\t",
+            "\t\t\t\t",
+            "\t\t\t\t",
+            "\t\t\t\t",
+            "\t\t\t\t",
+            "\t\t\t}",
+            "",
+            "\t\t});",
+            "",
+            ""
+        ],
+        "description": "Making Route Path for Routes.js"
+    },
+    "LBMesh-Admin Express GET Route":{
+        "prefix": "lbmesh:admin-router-page-path:get",
+        "body": [
+            "\t/**",
+            "\t *  @method GET /#path#",
+            "\t */",
+            "\t\tapp.get('/#action#',  function(req,res,next) {",
+            "",
+            "\t\t\t\t",
+            "\t\t\t\t",
+            "\t\t\t\t",
+            "\t\t\t\t",
+            "\t\t\t\t",
+            "\t\t\t}",
+            "",
+            "\t\t});",
+            "",
+            ""
+        ],
+        "description": "Making GET Route Path for Routes.js"
+    },
+    "LBMesh-Admin New Routes":{
+        "prefix": "lbmesh:admin-router-page",
+        "body": [
+            "'use strict'",
+            "",
+            "",
+            "module.exports = function(app) {",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "}",
+            "",
+            ""
+        ],
+        "description": "Blank Loopback Route Controller"
+    }
+}

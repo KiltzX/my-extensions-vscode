@@ -1,0 +1,90 @@
+{
+	"Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	},
+	"find by id": {
+		"prefix": "findById",
+		"body": [
+			"findById($1);",
+			"$2"
+		],
+		"description": "Log output to console"
+	},
+	"find where": {
+		"prefix": "find",
+		"body": [
+			"find({where: {and:[{$1}]}, skip: 0, limit: 0, fields: [$2], order: '$3'})",
+			"$4"
+		],
+		"description": "find instances using where filter"
+	},
+	"find one where": {
+		"prefix": "findOne",
+		"body": [
+			"findOne({where: {and:[{$1}]}, skip: 0, limit: 0, fields: [$2], order: '$3'})",
+			"$4"
+		],
+		"description": "find instances using where filter"
+	},
+	"updateAttributes": {
+		"prefix": "updateAttributes",
+		"body": [
+			"updateAttributes({$1})",
+			"$2"
+		],
+		"description": "updateAttributes"
+	},
+	"updateAttribute": {
+		"prefix": "updateAttribute",
+		"body": [
+			"updateAttribute($1, $2)",
+			"$3"
+		],
+		"description": "updateAttribute"
+	},
+	"map": {
+		"prefix": "map",
+		"body": [
+			"map(($1) => $2)",
+			"$3"
+		],
+		"description": "map function"
+	},
+	"function": {
+		"prefix": "function",
+		"body": [
+			"function $1($2) {$3}",
+			"$4"
+		],
+		"description": "function"
+	},
+	"findIndex": {
+		"prefix": "findIndex",
+		"body": [
+			"findIndex(($1) => $2);",
+			"$3"
+		],
+		"description": "findIndex function"
+	},
+	"require": {
+		"prefix": "require",
+		"body": [
+			"($2) require($1)",
+			"$3"
+		],
+		"description": "require"
+	},
+	"create": {
+		"prefix": "create",
+		"body": [
+			"create({$1})",
+			"$2"
+		],
+		"description": "create"
+	}
+}

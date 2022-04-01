@@ -1,0 +1,65 @@
+{
+	"name": "lbmesh-snippets",
+	"displayName": "LB Mesh Snippets",
+	"description": "Snippets designed to speed up LB Mesh Project Development ",
+	"version": "1.1.3",
+	"engines": {
+		"vscode": "^1.31.0"
+	},
+	"icon": "images/lbmesh-final-128.png",
+	"publisher": "iamjamilspain",
+	"categories": [
+		"Snippets",
+		"Programming Languages"
+	],
+	"keywords": [
+		"loopback",
+		"cloud native",
+		"lbmesh.io",
+		"kubernetes",
+		"container",
+		"compose",
+		"node.js"
+	],
+	"activationEvents": [
+		"onCommand:extension.lbmeshSnippets"
+	],
+	"repository": "https://github.com/lb-mesh/lbmesh-vscode-snippets.git",
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.lbmeshSnippets",
+				"title": "LB Mesh Cloud Native Framework Snippets"
+			}
+		],
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./snippets/js-snippets.json"
+			},
+			{
+				"language": "ejs",
+				"path": "./snippets/ejs-snippets.json"
+			}
+		]
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"eslint": "^5.13.0",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	},
+	"__metadata": {
+		"id": "7dc30ddf-4d2a-4cff-878a-bd8342e08d1c",
+		"publisherId": "919a0c63-2c30-4872-99fe-438588c0095b",
+		"publisherDisplayName": "Jamil Spain",
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1642808463715
+	}
+}

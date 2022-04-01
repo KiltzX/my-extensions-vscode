@@ -1,0 +1,66 @@
+{
+	"name": "tasks-shell-input",
+	"displayName": "Tasks Shell Input",
+	"description": "Use shell commands as input for your tasks",
+	"version": "1.7.0",
+	"publisher": "augustocdias",
+	"repository": {
+		"url": "https://github.com/augustocdias/vscode-shell-command"
+	},
+	"engines": {
+		"vscode": "^1.37.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:shellCommand.execute"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "shellCommand.execute",
+					"when": "false"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "shellCommand.execute",
+				"title": "Execute shell command"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.37.0",
+		"@typescript-eslint/eslint-plugin": "^5.9.0",
+		"@typescript-eslint/parser": "^5.9.0",
+		"eslint": "^7.32.0",
+		"eslint-config-standard": "^16.0.3",
+		"eslint-plugin-import": "^2.25.4",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-promise": "^5.2.0",
+		"glob": "^7.1.5",
+		"mocha": "^9.1.3",
+		"tslint": "^5.20.0",
+		"typescript": "^3.6.4",
+		"vscode-test": "^1.2.2"
+	},
+	"__metadata": {
+		"id": "67228a5a-7c05-4d2b-a42d-acbfe2097311",
+		"publisherId": "65689029-78c9-4625-8dd7-6e0f9d260796",
+		"publisherDisplayName": "Augusto",
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1642808462699
+	}
+}

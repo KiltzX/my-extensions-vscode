@@ -1,0 +1,43 @@
+{
+    "LBMesh-General REST POST View": {
+        "prefix": "lbmesh:frontend-rest-post",
+        "body": [
+            "\t\t{",
+            "\t\t\t\t\"template\": {",
+            "\t\t\t\t\t\t\"method\": \"POST\"",
+            "\t\t\t\t\t\t\"url\": \"api/\"",
+            "\t\t\t\t\t\t\"headers\": {",
+            "\t\t\t\t\t\t\t\"content-type\": \"applcation/json\"",
+            "\t\t\t\t\t\t},",
+            "\t\t\t\t\t\t\"body\": {",
+            "\t\t\t\t\t\t ",
+            "\t\t\t\t\t\t},",
+            "\t\t\t\t\t\t\"responsePath\": \"$\"",
+            "\t\t\t\t },",
+            "\t\t\t\t\"functions\": {",
+            "\t\t\t\t\t\t\"#funcname#\": []",
+            "\t\t\t\t}",
+            "\t\t}"
+        ],
+        "description": "Template POST Call for REST Connector"
+    },
+    "LBMesh-General REST GET View": {
+        "prefix": "lbmesh:frontend-rest-get",
+        "body": [
+            "\t\t{",
+            "\t\t\t\t\"template\": {",
+            "\t\t\t\t\t\t\"method\": \"GET\"",
+            "\t\t\t\t\t\t\"url\": \"api/\"",
+            "\t\t\t\t\t\t\"headers\": {",
+            "\t\t\t\t\t\t\t\"content-type\": \"applcation/json\"",
+            "\t\t\t\t\t\t},",
+            "\t\t\t\t\t\t\"responsePath\": \"$\"",
+            "\t\t\t\t },",
+            "\t\t\t\t\"functions\": {",
+            "\t\t\t\t\t\t\"#funcname#\": []",
+            "\t\t\t\t}",
+            "\t\t}"
+        ],
+        "description": "Template GET Call for REST Connector"
+    }
+}
